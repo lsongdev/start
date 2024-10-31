@@ -7,11 +7,11 @@ import { OpenAI } from 'https://lsong.org/chatgpt-demo/openai.js';
 const {
   lang,
   // gpt-4, gpt-3.5-turbo, qwen2
-  model = 'gpt-3.5-turbo'
+  model = 'qwen2'
 } = query;
 
 const openai = new OpenAI({
-  api: "https://oai.lsong.org/v1",
+  api: "https://ollama.lsong.org/v1",
   apiKey: 'c97f2b499aeb46eb' + 'be29aef5a2052906',
 });
 
