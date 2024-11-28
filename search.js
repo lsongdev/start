@@ -7,7 +7,7 @@ import { OpenAI } from 'https://lsong.org/chatgpt-demo/openai.js';
 
 const {
   lang,
-  model = 'openai/gpt-3.5-turbo', // gpt-4, gpt-3.5-turbo, qwen2
+  model = 'qwen/qwen-2-7b-instruct:free',
 } = query;
 
 const apiKeys = [
@@ -82,11 +82,11 @@ const Overview = ({ result }) => {
       messages: [systemMessage, userMessage],
       stream: true,
     });
-    for await (const part of response) {
+    for await (const chunk of response) {
       if (chunk.error && chunk.error.code != 0) {
         throw new Error(chunk.error.message);
       }
-      const content = part.choices[0]?.delta?.content || '';
+      const content = chunk.choices[0]?.delta?.content || '';
       setSummary(summary => summary + content);
     }
     setDone(true);
