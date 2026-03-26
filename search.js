@@ -6,11 +6,12 @@ import { OpenAI } from 'https://lsong.org/chatgpt-demo/openai.js';
 
 const {
   lang,
-  model = 'qwen2',
+  model = 'free',
 } = query;
 
 const openai = new OpenAI({
-  api: "https://ollama.lsong.org/v1",
+  api: "https://ai.lsong.org/v1",
+  apiKey: "sk-75d532870bf24cca98ea508f914c5446",
 });
 
 // const response = await openai.createChatCompletion({
@@ -69,6 +70,7 @@ const Overview = ({ result }) => {
         throw new Error(chunk.error.message);
       }
       const content = chunk.choices[0]?.delta?.content || '';
+      console.log(content);
       setSummary(summary => summary + content);
     }
     setDone(true);

@@ -146,6 +146,10 @@
       description: "Lightweight MQTT Client"
       url: "https://apps.apple.com/us/app/flakemq/id6742126928"
       icon: "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/30/8a/a2/308aa2fc-6ee6-37c2-52d6-d920726dc6e3/AppIcon-0-0-1x_U007emarketing-0-11-0-85-220.png/460x0w.webp"
+    - title: "ExamGo"
+      description: "ExamGo is a focused and efficient exam practice app designed to help you master questions and build confidence before your test."
+      url: "https://apps.apple.com/us/app/examgo/id6759777317"
+      icon: "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/f8/67/86/f8678687-b92f-6cf9-261d-7335a687792d/Placeholder.mill/400x400bb-75.webp"
 
 - name: "Tools"
   links:
