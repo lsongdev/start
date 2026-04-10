@@ -104,6 +104,9 @@
 
 - name: "Lsong’s Games"
   links:
+    - title: "NES Emulator"
+      url: "https://lsong.org/games"
+      icon: "🎮"
     - title: "2048"
       url: "https://lsong.org/2048"
       icon: "https://play-lh.googleusercontent.com/bZregCeEpzMwRoocLnsYb4Te-vPPHkW1k5H1xsQ3qK9yE00fixpWu5fNsUz3ut2IiDHn"
