@@ -107,6 +107,8 @@
       url: "https://lsong.org/sbti"
     - title: "EdgeTTS"
       url: "https://lsong.org/edge-tts"
+    - title: "FFmpeg Demo"
+      url: "https://lsong.org/ffmpeg-demo"
 
 - name: "Lsong’s Games"
   links:

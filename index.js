@@ -64,9 +64,9 @@ const Link = ({ link, index }) =>
 const Folder = ({ folder }) =>
   h('div', null, [
     h('h3', null, folder.name),
-    h('ul', { className: 'grid' },
+    h('ul', { className: 'grid grid-cols-4 md-grid-cols-3 sm-grid-cols-2' },
       folder.links?.map((bookmark, index) =>
-        h('li', { key: index, className: 'col-3 col-lg-4 col-sm-6 link' }, h(Link, { link: bookmark, index }))
+        h('li', { key: index, className: 'link' }, h(Link, { link: bookmark, index }))
       )
     )
   ]);
