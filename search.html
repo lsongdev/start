@@ -21,7 +21,73 @@
   <link rel="stylesheet" href="app.css">
   <script type="module" src="search.js"></script>
   <style>
+    .top-stories,
+    .search-results,
+    .related-questions {
+      margin: 0;
+      padding: 0;
+    }
 
+    .search-results a {
+      display: block;
+      font-size: 18px;
+    }
+
+    .search-results p {
+      margin: 0;
+    }
+
+    .search-results img,
+    .related-questions img {
+      width: 1cap;
+      height: 1cap;
+      display: inline-block;
+      margin-right: 0.5cap;
+    }
+
+    .top-stories img {
+      width: 150px;
+      height: 100%;
+      min-width: 150px;
+      min-height: 80px;
+      max-width: 150px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .top-stories li {
+      gap: 10px;
+    }
+
+    .related-searches {
+      text-align: center;
+    }
+
+    .question {
+      color: red;
+    }
+
+    .question::before {
+      content: "Q: ";
+    }
+
+    .answer {
+      color: green;
+    }
+
+    .answer::before {
+      content: "A: ";
+    }
+
+    .overview {
+      overflow: hidden;
+    }
+
+    .overview sup a {
+      font-family: monospace;
+      text-decoration: none;
+    }
   </style>
 </head>
 

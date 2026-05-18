@@ -120,8 +120,8 @@ const SearchForm = ({ onSearch }) => {
 const ResultList = ({ result }) => {
   return [
     h('h2', null, "Results"),
-    h('ul', { className: 'search-results grid' }, result.organic_results?.map((item, index) =>
-      h('li', { key: index, id: `result-${index}`, className: 'col-12' }, [
+    h('ul', { className: 'search-results' }, result.organic_results?.map((item, index) =>
+      h('li', { key: index, id: `result-${index}`, className: 'card' }, [
         item.favicon && h('img', { src: item.favicon, width: 16, height: 16 }),
         h('span', {}, item.displayed_link),
         h('a', { href: item.link }, item.title),
@@ -134,8 +134,8 @@ const ResultList = ({ result }) => {
 const RelatedSearches = ({ relatedSearches }) => {
   return [
     h('h2', null, 'Related Searches'),
-    h('ul', { className: 'related-searches grid' }, relatedSearches?.map((item, index) =>
-      h('li', { key: index, className: 'col-4 col-sm-6' },
+    h('ul', { className: 'related-searches grid grid-cols-4 sm-grid-cols-2' }, relatedSearches?.map((item, index) =>
+      h('li', { key: index, className: 'card' },
         h('a', { href: `?q=${item.query}` }, item.query)
       )
     ))
@@ -145,8 +145,8 @@ const RelatedSearches = ({ relatedSearches }) => {
 const RelatedQuestions = ({ relatedQuestions }) => {
   return [
     h('h2', null, 'Related Questions'),
-    h('ul', { className: 'related-questions grid' }, relatedQuestions?.map((item, index) =>
-      h('li', { key: index, className: 'col-12', id: `Q${index + 1}` },
+    h('ul', { className: 'related-questions' }, relatedQuestions?.map((item, index) =>
+      h('li', { key: index, className: 'card', id: `Q${index + 1}` },
         h('a', { className: 'question' }, item.question),
         h('p', { className: 'answer' }, item.snippet),
         h('div', null, [
@@ -162,8 +162,8 @@ const RelatedQuestions = ({ relatedQuestions }) => {
 const TopStories = ({ topStories }) => {
   return [
     h('h2', null, 'Top Stories'),
-    h('ul', { className: 'top-stories grid' }, topStories.map((item, index) =>
-      h('li', { key: index, className: 'flex flex-row col-12' }, [
+    h('ul', { className: 'top-stories' }, topStories.map((item, index) =>
+      h('li', { key: index, className: 'flex flex-row card' }, [
         h('img', { style: `background-image: url(${item.thumbnail});` }),
         h('div', null, [
           h('a', { href: item.link, className: 'block' }, item.title),

@@ -56,7 +56,7 @@ const LinkIcon = ({ link, index }) => {
 };
 
 const Link = ({ link, index }) =>
-  h('a', { className: '', title: link.description || link.title, href: link.url }, [
+  h('a', { className: 'link', title: link.description || link.title, href: link.url }, [
     h(LinkIcon, { link, index }),
     link.title
   ]);
@@ -66,7 +66,7 @@ const Folder = ({ folder }) =>
     h('h3', null, folder.name),
     h('ul', { className: 'grid grid-cols-4 md-grid-cols-3 sm-grid-cols-2' },
       folder.links?.map((bookmark, index) =>
-        h('li', { key: index, className: 'link' }, h(Link, { link: bookmark, index }))
+        h('li', { key: index, className: 'card' }, h(Link, { link: bookmark, index }))
       )
     )
   ]);
