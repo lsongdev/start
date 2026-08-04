@@ -1,8 +1,11 @@
 @import url(https://lsong.org/css/stylesheet.css);
-@import url(https://lsong.org/stylesheets/flex.css);
-@import url(https://lsong.org/stylesheets/card.css);
-@import url(https://lsong.org/stylesheets/grid.css);
-@import url(https://lsong.org/stylesheets/button.css);
+
+.card {
+  --card-margin: 0px;
+  --card-padding: 10px;
+  --card-border-radius: 5px;
+  margin: var(--card-margin);
+}
 
 #hello {
   display: none;
