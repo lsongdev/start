@@ -1,24 +1,27 @@
 {
   "name": "Lsong’s Start",
   "short_name": "Start",
-  "description": "A simple personal bookmark navigation website and AI search engine.",
-  "id": "?id=start",
-  "start_url": ".",
+  "description": "Search the web and explore Lsong’s collection of useful links, apps, and experiments.",
+  "id": "/",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
   "display": "standalone",
-  "theme_color": "#000",
-  "background_color": "#efefef",
+  "theme_color": "#fafafa",
+  "background_color": "#fafafa",
   "icons": [
     {
-      "src": "https://lsong.org/icon-x128.png",
-      "sizes": "128x128",
+      "src": "https://lsong.org/assets/web/icon-192-maskable.png",
+      "sizes": "192x192",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     },
     {
-      "src": "https://lsong.org/icon-x512.png",
+      "src": "https://lsong.org/assets/web/icon-512-maskable.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "any"
+      "purpose": "any maskable"
     }
   ],
   "categories": [
