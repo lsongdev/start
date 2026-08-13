@@ -294,6 +294,8 @@ kbd {
   overflow: hidden;
   border-radius: 9px;
   background: var(--icon-bg, var(--color-surface-subtle));
+  color: var(--color-text);
+  box-shadow: inset 0 0 0 1px rgb(0 0 0 / 8%);
   font-size: 16px;
   font-weight: 650;
   text-transform: uppercase;
@@ -301,7 +303,14 @@ kbd {
 
 img.link-icon {
   object-fit: cover;
-  background: var(--color-surface);
+  padding: 5px;
+  background: var(--color-surface-subtle);
+}
+
+/* Keep the rounded group intact when its accessible label is visually hidden. */
+.start-search > .sr-only + .input {
+  border-start-start-radius: var(--input-border-radius);
+  border-end-start-radius: var(--input-border-radius);
 }
 
 .link-content {
