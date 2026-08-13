@@ -79,6 +79,7 @@ html {
 
 .start-search {
   width: min(100%, 850px);
+  margin-top: 32px;
 }
 
 .start-search .input {
