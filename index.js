@@ -283,6 +283,7 @@ const render = async () => {
     app.replaceChildren(message);
   } finally {
     loading.hidden = true;
+    app.setAttribute('aria-busy', 'false');
   }
 };
 

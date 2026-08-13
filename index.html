@@ -64,14 +64,18 @@
         </div>
       </header>
 
-      <div id="loading" class="loading-grid grid grid-cols-4 md-grid-cols-3 sm-grid-cols-2" aria-label="Loading bookmarks">
+      <div id="loading" class="loading-grid grid grid-cols-4 md-grid-cols-3 sm-grid-cols-2" role="status" aria-label="Loading bookmarks">
         <span class="card"></span><span class="card"></span><span class="card"></span><span class="card"></span>
         <span class="card"></span><span class="card"></span><span class="card"></span><span class="card"></span>
       </div>
-      <div id="app" class="bookmarks"></div>
+      <div id="app" class="bookmarks" aria-live="polite" aria-busy="true"></div>
       <p id="empty-state" class="empty-state" hidden>No links match your search.</p>
     </section>
   </main>
+
+  <noscript>
+    <p class="noscript-notice">The directory needs JavaScript to load its links. You can still open the <a href="data.yaml">source data</a> directly.</p>
+  </noscript>
 
   <dialog id="bookmark-dialog" class="dialog" aria-labelledby="bookmark-dialog-title">
     <form id="bookmark-form" class="form">

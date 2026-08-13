@@ -22,6 +22,13 @@
   -webkit-font-smoothing: antialiased;
 }
 
+.noscript-notice {
+  width: min(calc(100% - var(--page-gutter) * 2), var(--page-max-width));
+  margin: 24px auto;
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
 @media (prefers-color-scheme: dark) {
   .start-page {
     --color-canvas: #09090b;
