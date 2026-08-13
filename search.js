@@ -10,8 +10,8 @@ const {
 } = query;
 
 const openai = new OpenAI({
-  api: "https://ai.lsong.org/v1",
-  apiKey: "sk-75d532870bf24cca98ea508f914c5446",
+  api: "https://models.lsong.org/v1",
+  apiKey: "sk-lsong_startpage",
 });
 
 // const response = await openai.createChatCompletion({

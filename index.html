@@ -1,101 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8">
   <title>Lsong’s Start</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="description" content="A simple personal bookmark navigation website and AI search engine.">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Search the web and explore Lsong’s collection of useful links, apps, and experiments.">
   <meta name="author" content="Lsong">
-  <meta name="theme-color" content="#e8fbfe">
+  <meta name="theme-color" content="#fafafa">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="Lsong’s Start">
   <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:creator" content="@song940">
+  <meta name="twitter:creator" content="@lsongdev">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="https://lsong.org/icon.svg">
   <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="https://lsong.org/icon-x128.png">
   <link rel="apple-touch-icon" sizes="512x512" type="image/png" href="https://lsong.org/icon-x512.png">
-  <link rel="stylesheet" href="app.css">
-  <script type="module" src="index.js"></script>
+  <link rel="stylesheet" href="app.css?v=4">
+  <script type="module" src="index.js?v=7"></script>
 </head>
 
-<body>
-  <div class="container">
-    <header class="header">
-      <a href="/" class="heading">
-        <img src="https://lsong.org/icon.svg" alt="logo" class="logo" width="24">
-        <h1 class="title" prefix="Lsong’s ">Start</h1>
-      </a>
-      <nav class="nav nav-bar">
-        <a href="//lsong.org">home</a>
-        <a href="//lsong.org/posts">blog</a>
-        <a href="//lsong.org/books">books</a>
-        <a href="//lsong.org/music">music</a>
-        <a href="//lsong.org/apps">apps</a>
-        <x-inbox></x-inbox>
-      </nav>
-      <hr />
-    </header>
-    <main class="content">
+<body class="start-page">
+  <a class="skip-link" href="#content">Skip to content</a>
 
-      <section id="hello">
-        <h2>Hello 👋</h2>
-        <p class="headline">
-          Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
-          I have experience in web and mobile development, as well as a background in embedded systems and network
-          protocols.
-          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
-            href="//go.lsong.org/#apps">applications</a> in my spare time.
-          Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
-          community.
-          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free
-          to
-          connect
-          with me to discuss ideas.
-          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
-            href="//go.lsong.org/#game">games</a>.
-        </p>
-      </section>
+  <header class="start-header navbar">
+    <a href="/" class="navbar-brand" aria-label="Lsong’s Start home">
+      <span class="brand-mark" aria-hidden="true"><img src="https://lsong.org/icon.svg" alt=""></span>
+      <h1 class="title" prefix="Lsong’s ">Start</h1>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="https://lsong.org">Home</a>
+      <a href="https://lsong.org/posts">Writing</a>
+      <a href="https://lsong.org/start">Products</a>
+      <a href="https://my.lsong.org">Account</a>
+    </nav>
+  </header>
 
-      <section>
-        <h2>Search</h2>
-        <form action="search.html" id="search" class="input-group width-full" enctype="text/plain">
-          <input name="q" type="search" class="input input-block" placeholder="Type keyword to search" autofocus>
-          <button type="submit" class="button button-primary">Search</button>
-        </form>
-      </section>
+  <main id="content">
+    <section class="start-hero" aria-labelledby="start-title">
+      <p class="eyebrow">Your corner of the web</p>
+      <h2 id="start-title">Where do you<br>want to go?</h2>
+      <p class="hero-copy">Search the web, or quickly filter through the links collected here.</p>
 
-      <section id="loading">
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-      </section>
-
-      <section id="app"></section>
-    </main>
-    <footer class="footer">
-      <h2>Subscribe</h2>
-      <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
-      <form action="https://formspree.io/song940@gmail.com" method="post" class="input-group width-full">
-        <input class="input" type="email" id="email" name="email" required placeholder="email address">
-        <button class="button" type="submit">Submit</button>
+      <form action="search.html" id="search" class="start-search input-group" enctype="text/plain">
+        <label class="sr-only" for="search-input">Search the web or filter bookmarks</label>
+        <input name="q" type="search" id="search-input" class="input input-large" placeholder="Search the web or filter your links" autocomplete="off" autofocus>
+        <button type="submit" class="button button-primary button-large">Search</button>
       </form>
-      <hr />
-      Liu Song
-      <address>
-        <a href="mailto:hi@lsong.org">hi@lsong.org</a>
-      </address>
-      <a href="https://lsong.org">https://lsong.org</a>
-    </footer>
-  </div>
+      <p class="search-help"><span>Start typing to filter links</span><span><kbd>/</kbd> Focus</span><span><kbd>Esc</kbd> Clear</span></p>
+    </section>
+
+    <section class="directory" aria-labelledby="directory-title">
+      <header class="directory-header">
+        <div>
+          <p class="eyebrow">Directory</p>
+          <h2 id="directory-title">Saved places.</h2>
+        </div>
+        <div class="directory-actions">
+          <p id="directory-count" aria-live="polite">Loading links…</p>
+          <button type="button" id="add-bookmark" class="button button-secondary">Add bookmark</button>
+        </div>
+      </header>
+
+      <div id="loading" class="loading-grid grid grid-cols-4 md-grid-cols-3 sm-grid-cols-2" aria-label="Loading bookmarks">
+        <span class="card"></span><span class="card"></span><span class="card"></span><span class="card"></span>
+        <span class="card"></span><span class="card"></span><span class="card"></span><span class="card"></span>
+      </div>
+      <div id="app" class="bookmarks"></div>
+      <p id="empty-state" class="empty-state" hidden>No links match your search.</p>
+    </section>
+  </main>
+
+  <dialog id="bookmark-dialog" class="dialog" aria-labelledby="bookmark-dialog-title">
+    <form id="bookmark-form" class="form">
+      <header class="dialog-header">
+        <h2 id="bookmark-dialog-title">Add a bookmark</h2>
+        <button type="button" class="dialog-close" data-dialog-close aria-label="Close">×</button>
+      </header>
+      <div class="dialog-body form-grid">
+        <label class="dialog-field">
+          Name
+          <input class="input" name="title" required maxlength="80" autocomplete="off" placeholder="Example">
+        </label>
+        <label class="dialog-field">
+          URL
+          <input class="input" name="url" required maxlength="500" inputmode="url" autocomplete="url" placeholder="https://example.com">
+        </label>
+        <label class="dialog-field">
+          Description <small>Optional</small>
+          <input class="input" name="description" maxlength="160" autocomplete="off" placeholder="A short note">
+        </label>
+        <label class="dialog-field">
+          Icon <small>Optional emoji or image URL</small>
+          <input class="input" name="icon" maxlength="500" autocomplete="off" placeholder="✨">
+        </label>
+        <p class="field-help col-full">Saved only in this browser. Nothing is uploaded or added to the public directory.</p>
+        <p id="bookmark-form-error" class="alert alert-danger col-full" hidden></p>
+      </div>
+      <footer class="dialog-footer">
+        <button type="button" class="button button-secondary" data-dialog-close>Cancel</button>
+        <button type="submit" class="button button-primary">Add bookmark</button>
+      </footer>
+    </form>
+  </dialog>
+
+  <footer class="start-footer footer">
+    <a class="navbar-brand" href="/">
+      <span class="brand-mark" aria-hidden="true"><img src="https://lsong.org/icon.svg" alt=""></span>
+      <span>Start</span>
+    </a>
+    <p>A useful part of lsong.org.</p>
+    <nav aria-label="Footer navigation">
+      <a href="mailto:hi@lsong.org">Email</a>
+      <a href="https://github.com/lsongdev">GitHub</a>
+      <a href="https://lsong.org">Home</a>
+    </nav>
+  </footer>
 </body>
 
 </html>

@@ -1,45 +1,482 @@
-@import url(https://lsong.org/css/stylesheet.css);
-@import url(https://lsong.org/stylesheets/flex.css);
-@import url(https://lsong.org/stylesheets/card.css);
-@import url(https://lsong.org/stylesheets/grid.css);
-@import url(https://lsong.org/stylesheets/button.css);
+@import url("https://lsong.org/stylesheets/index.css");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap");
 
-#hello {
+.start-page {
+  --color-canvas: #fafafa;
+  --color-surface: #ffffff;
+  --color-text: #111113;
+  --color-text-muted: #68686f;
+  --color-border: #dedee3;
+  --color-primary: #6d3df5;
+  --color-primary-hover: #5730d5;
+  --color-focus: #6d3df5;
+  --font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-family-heading: var(--font-family);
+  --page-max-width: 1120px;
+  --page-gutter: clamp(18px, 5vw, 48px);
+  min-width: 320px;
+  margin: 0;
+  color: var(--color-text);
+  background: var(--color-canvas);
+  font-family: var(--font-family);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.start-page [hidden] {
+  display: none !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-canvas);
+}
+
+.start-page > header,
+.start-page > main,
+.start-page > footer {
+  width: min(calc(100% - var(--page-gutter) * 2), var(--page-max-width));
+  max-width: none;
+  margin-inline: auto;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 10;
+  top: 8px;
+  left: 8px;
+  padding: 10px 14px;
+  color: var(--color-on-primary);
+  background: var(--color-primary);
+  transform: translateY(-150%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.start-header {
+  min-height: 74px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.brand-mark {
+  display: inline-grid;
+  width: 23px;
+  height: 23px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.brand-mark img {
+  width: 12px;
+  height: 12px;
+  filter: invert(1);
+}
+
+.start-hero {
+  padding: clamp(72px, 10vw, 118px) 0 clamp(62px, 8vw, 92px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.start-hero h2 {
+  margin: 20px 0 24px;
+  font-family: var(--font-family-heading);
+  font-size: clamp(54px, 8vw, 90px);
+  font-weight: 680;
+  line-height: 0.92;
+  letter-spacing: -0.07em;
+}
+
+.hero-copy {
+  max-width: 600px;
+  margin: 0 0 34px;
+  color: var(--color-text-muted);
+  font-size: clamp(17px, 2vw, 20px);
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+}
+
+.start-search {
+  width: min(100%, 850px);
+}
+
+.start-search .input {
+  min-width: 0;
+  font-family: var(--font-family);
+}
+
+.search-help {
+  display: flex;
+  width: min(100%, 850px);
+  gap: 20px;
+  margin: 12px 0 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.search-help span:first-child {
+  margin-right: auto;
+}
+
+kbd {
+  padding: 2px 5px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  box-shadow: 0 1px 0 var(--color-border);
+  font-family: var(--font-family);
+  font-size: 10px;
+}
+
+.directory {
+  padding: clamp(66px, 9vw, 100px) 0;
+}
+
+.directory-header,
+.folder-header {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.directory-header {
+  margin-bottom: 50px;
+}
+
+.directory-header h2 {
+  margin: 10px 0 0;
+  font-family: var(--font-family-heading);
+  font-size: clamp(36px, 5vw, 54px);
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.055em;
+}
+
+.directory-header > p,
+.folder-header span {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.directory-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.directory-actions p {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 12px;
+}
+
+.bookmark-folder {
+  padding: 34px 0 48px;
+  border-top: 1px solid var(--color-border);
+}
+
+.bookmark-folder[hidden],
+.bookmark-card[hidden] {
   display: none;
 }
 
-#loading p {
-  height: 2em;
-  background-color: #eee;
+.folder-header {
+  margin-bottom: 18px;
 }
 
-a {
+.folder-header h3 {
+  margin: 0;
+  font-family: var(--font-family-heading);
+  font-size: 20px;
+  font-weight: 640;
+  letter-spacing: -0.035em;
+}
+
+.bookmark-grid {
+  --grid-gap: 12px;
+  margin: 0;
+}
+
+.bookmark-card {
+  --card-padding: 0;
+  --card-border-radius: var(--radius-md);
+  --card-shadow: none;
+  min-width: 0;
+  margin: 0;
+  transition: border-color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+}
+
+.bookmark-card-local {
+  position: relative;
+}
+
+.bookmark-card-local .bookmark-link {
+  padding-right: 76px;
+}
+
+.bookmark-delete {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  right: 10px;
+  min-width: 0;
+  padding-inline: 9px;
+  opacity: 0;
+  transform: translateY(-50%);
+  transition: opacity var(--duration-fast) var(--ease-standard);
+}
+
+.bookmark-card-local:hover .bookmark-delete,
+.bookmark-delete:focus-visible {
+  opacity: 1;
+}
+
+.bookmark-card:hover {
+  border-color: var(--color-border-strong);
+  background: var(--color-surface-subtle);
+  transform: translateY(-1px);
+}
+
+.bookmark-link {
+  display: grid;
+  min-height: 82px;
+  padding: 18px;
+  grid-template-columns: 38px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-text);
   text-decoration: none;
 }
 
-.link {
-  gap: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.card:hover {
-  cursor: pointer;
-  background-color: #efefef;
-}
-
-.bookmarks li>a {
-  color: #333;
-}
-
-.bookmarks .link-icon {
-  width: 32px;
-  height: 32px;
-  min-width: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+.link-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  min-width: 38px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  background: var(--icon-bg, var(--color-surface-subtle));
+  font-size: 16px;
+  font-weight: 650;
   text-transform: uppercase;
+}
+
+img.link-icon {
+  object-fit: cover;
+  background: var(--color-surface);
+}
+
+.link-content {
+  min-width: 0;
+}
+
+.link-title,
+.link-description {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link-title {
+  font-size: 14px;
+  font-weight: 620;
+}
+
+.link-description {
+  margin-top: 3px;
+  color: var(--color-text-muted);
+  font-size: 11px;
+}
+
+.link-arrow {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  opacity: 0;
+  transition: opacity var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+}
+
+.bookmark-card:hover .link-arrow {
+  opacity: 1;
+  transform: translate(2px, -2px);
+}
+
+.loading-grid {
+  --grid-gap: 12px;
+}
+
+.loading-grid .card {
+  min-height: 82px;
+  margin: 0;
+  border-color: transparent;
+  background: linear-gradient(90deg, var(--color-surface-subtle), var(--color-surface), var(--color-surface-subtle));
+  background-size: 200% 100%;
+  animation: loading 1.4s infinite linear;
+}
+
+.empty-state {
+  padding: 60px 20px;
+  margin: 0;
+  color: var(--color-text-muted);
+  border: 1px dashed var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+#bookmark-dialog {
+  --dialog-width: 560px;
+}
+
+#bookmark-dialog .dialog-body {
+  align-items: start;
+}
+
+#bookmark-dialog .dialog-field small {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.search-content {
+  padding: clamp(54px, 8vw, 86px) 0;
+}
+
+.search-content #hello {
+  display: none;
+}
+
+.search-content #app > h2 {
+  margin-top: 46px;
+  font-family: var(--font-family-heading);
+  letter-spacing: -0.035em;
+}
+
+.search-content :is(.search-results, .top-stories, .related-questions, .related-searches) {
+  list-style: none;
+}
+
+.search-content .card {
+  box-shadow: none;
+}
+
+.start-footer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr auto;
+  gap: 24px;
+  align-items: center;
+  padding: 40px 0 54px;
+  border-top: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  text-align: left;
+}
+
+.start-footer p {
+  margin: 0;
+  font-size: 13px;
+}
+
+.start-footer nav {
+  display: flex;
+  gap: 18px;
+}
+
+.start-footer nav a {
+  color: var(--color-text-muted);
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.start-footer nav a:hover {
+  color: var(--color-text);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@keyframes loading {
+  to { background-position: -200% 0; }
+}
+
+@media (max-width: 640px) {
+  .start-header {
+    min-height: 66px;
+  }
+
+  .start-hero {
+    padding-top: 64px;
+  }
+
+  .start-hero h2 {
+    font-size: clamp(52px, 16vw, 68px);
+  }
+
+  .search-help span:not(:first-child) {
+    display: none;
+  }
+
+  .bookmark-link {
+    min-height: 76px;
+    padding: 14px;
+  }
+
+  .directory-header {
+    align-items: start;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .directory-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .bookmark-delete {
+    opacity: 1;
+  }
+
+  .start-footer {
+    grid-template-columns: 1fr auto;
+  }
+
+  .start-footer p {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-brand h1::before {
+    content: attr(prefix);
+    font-weight: 400;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .loading-grid .card { animation: none; }
 }

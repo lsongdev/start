@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="utf-8">
@@ -18,7 +18,7 @@
   <link rel="icon" type="image/svg+xml" href="https://lsong.org/icon.svg">
   <link rel="apple-touch-icon" sizes="128x128" type="image/png" href="https://lsong.org/icon-x128.png">
   <link rel="apple-touch-icon" sizes="512x512" type="image/png" href="https://lsong.org/icon-x512.png">
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="app.css?v=4">
   <script type="module" src="search.js"></script>
   <style>
     .top-stories,
@@ -91,24 +91,20 @@
   </style>
 </head>
 
-<body>
-  <div class="container">
-    <header class="header">
-      <a href="/" class="heading">
-        <img src="https://lsong.org/icon.svg" alt="logo" class="logo">
+<body class="start-page search-page">
+    <header class="start-header navbar">
+      <a href="/" class="navbar-brand" aria-label="Lsong’s Start home">
+        <span class="brand-mark" aria-hidden="true"><img src="https://lsong.org/icon.svg" alt=""></span>
         <h1 class="title" prefix="Lsong’s ">Start</h1>
       </a>
-      <nav class="nav nav-bar">
-        <a href="//lsong.org">home</a>
-        <a href="//lsong.org/posts">blog</a>
-        <a href="//lsong.org/books">books</a>
-        <a href="//lsong.org/music">music</a>
-        <a href="//lsong.org/apps">apps</a>
-        <x-inbox></x-inbox>
+      <nav aria-label="Main navigation">
+        <a href="https://lsong.org">Home</a>
+        <a href="https://lsong.org/posts">Writing</a>
+        <a href="https://lsong.org/start">Products</a>
+        <a href="https://my.lsong.org">Account</a>
       </nav>
-      <hr />
     </header>
-    <main class="content">
+    <main class="search-content">
 
       <section id="hello">
         <h2>Hello 👋</h2>
@@ -141,21 +137,18 @@
         <p></p>
       </section>
     </main>
-    <footer class="footer">
-      <h2>Subscribe</h2>
-      <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
-      <form action="https://formspree.io/song940@gmail.com" method="post" class="input-group width-full">
-        <input class="input" type="email" id="email" name="email" required placeholder="email address">
-        <button class="button" type="submit">Submit</button>
-      </form>
-      <hr />
-      Liu Song
-      <address>
-        <a href="mailto:hi@lsong.org">hi@lsong.org</a>
-      </address>
-      <a href="https://lsong.org">https://lsong.org</a>
+    <footer class="start-footer footer">
+      <a class="navbar-brand" href="/">
+        <span class="brand-mark" aria-hidden="true"><img src="https://lsong.org/icon.svg" alt=""></span>
+        <span>Start</span>
+      </a>
+      <p>A useful part of lsong.org.</p>
+      <nav aria-label="Footer navigation">
+        <a href="mailto:hi@lsong.org">Email</a>
+        <a href="https://github.com/lsongdev">GitHub</a>
+        <a href="https://lsong.org">Home</a>
+      </nav>
     </footer>
-  </div>
 </body>
 
 </html>

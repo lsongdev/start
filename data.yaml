@@ -20,6 +20,35 @@
       url: "https://v2ex.com"
       icon: "https://v2ex.com/favicon.ico"
 
+- name: "Lsong’s Products"
+  links:
+    - title: MyCenter
+      category: Identity
+      description: One secure account for every Lsong application.
+      url: "https://my.lsong.org"
+      icon: "👤"
+    - title: Models
+      category: AI infrastructure
+      description: One API for the AI models and SDKs you already know.
+      url: "https://ai.lsong.org"
+      icon: "✦"
+    - title: Mail
+      category: Communication
+      description: Your name, your own private inbox.
+      url: "https://mail.lsong.org"
+      icon: "✉️"
+    - title: Mori
+      category: Independent market
+      description: A small marketplace for independent goods.
+      url: "https://shop.lsong.org"
+      icon: "🌿"
+      theme: warm
+    - title: Files
+      category: Storage
+      description: A simple file hosting service for your personal files.
+      url: "https://files.lsong.org"
+      icon: "📁"
+
 - name: "Lsong’s Web"
   links:
     - title: Blog
