@@ -68,14 +68,14 @@ html {
   width: 23px;
   height: 23px;
   place-items: center;
-  border-radius: 50%;
-  background: var(--color-primary);
+  flex: none;
 }
 
 .brand-mark img {
-  width: 12px;
-  height: 12px;
-  filter: invert(1);
+  display: block;
+  width: 23px;
+  height: 23px;
+  object-fit: contain;
 }
 
 .start-hero {
