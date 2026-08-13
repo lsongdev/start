@@ -1,4 +1,4 @@
-@import url("https://lsong.org/stylesheets/index.css");
+@import url("https://lsong.org/css/stylesheet.css");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap");
 
 .start-page {
@@ -86,16 +86,6 @@ html {
 .start-hero {
   padding: clamp(72px, 10vw, 118px) 0 clamp(62px, 8vw, 92px);
   border-bottom: 1px solid var(--color-border);
-}
-
-.eyebrow {
-  margin: 0;
-  color: var(--color-text-muted);
-  font-size: 11px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
 }
 
 .start-hero h2 {
