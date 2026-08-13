@@ -1,4 +1,4 @@
-@import url("https://lsong.org/css/stylesheet.css");
+@import url("https://lsong.org/css/stylesheet.css?v=2");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap");
 
 .start-page {
@@ -12,7 +12,6 @@
   --color-focus: #6d3df5;
   --font-family: "Space Grotesk", ui-sans-serif, system-ui, -apple-system, sans-serif;
   --font-family-heading: var(--font-family);
-  --page-max-width: 1120px;
   --page-gutter: clamp(18px, 5vw, 48px);
   min-width: 320px;
   margin: 0;
@@ -76,34 +75,6 @@ html {
 
 .skip-link:focus {
   transform: translateY(0);
-}
-
-.start-header {
-  min-height: 74px;
-  border-bottom: 1px solid var(--color-border);
-}
-
-.start-hero {
-  padding: clamp(72px, 10vw, 118px) 0 clamp(62px, 8vw, 92px);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.start-hero h2 {
-  margin: 20px 0 24px;
-  font-family: var(--font-family-heading);
-  font-size: clamp(54px, 8vw, 90px);
-  font-weight: 680;
-  line-height: 0.92;
-  letter-spacing: -0.07em;
-}
-
-.hero-copy {
-  max-width: 600px;
-  margin: 0 0 34px;
-  color: var(--color-text-muted);
-  font-size: clamp(17px, 2vw, 20px);
-  line-height: 1.5;
-  letter-spacing: -0.02em;
 }
 
 .start-search {
@@ -397,18 +368,6 @@ img.link-icon {
 }
 
 @media (max-width: 640px) {
-  .start-header {
-    min-height: 66px;
-  }
-
-  .start-hero {
-    padding-top: 64px;
-  }
-
-  .start-hero h2 {
-    font-size: clamp(52px, 16vw, 68px);
-  }
-
   .search-help span:not(:first-child) {
     display: none;
   }
