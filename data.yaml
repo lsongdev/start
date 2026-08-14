@@ -22,16 +22,6 @@
 
 - name: "Lsong’s Products"
   links:
-    - title: MyCenter
-      category: Identity
-      description: One secure account for every Lsong application.
-      url: "https://my.lsong.org"
-      icon: "👤"
-    - title: Models
-      category: AI infrastructure
-      description: One API for the AI models and SDKs you already know.
-      url: "https://ai.lsong.org"
-      icon: "✦"
     - title: Mail
       category: Communication
       description: Your name, your own private inbox.
@@ -53,16 +43,26 @@
       description: A simple payment processing service for your business.
       url: "https://pay.lsong.org"
       icon: "💵"
-    - title: Forum
-      category: Community
-      description: A simple forum for your community.
-      url: "https://forum.lsong.org"
-      icon: "📝"
+    - title: Social
+      category: Social
+      description: A small OIDC-backed Mastodon-compatible ActivityPub service
+      url: "https://social.lsong.org"
+      icon: "🐘"
     - title: People
       category: Productivity
       description: A simple people directory for your organization.
       url: "https://people.lsong.org"
       icon: "🪐"
+    - title: Models
+      category: AI infrastructure
+      description: One API for the AI models and SDKs you already know.
+      url: "https://models.lsong.org"
+      icon: "✦"
+    - title: Games
+      category: Games
+      description: A hand-picked collection of NES favorites, ready to play in your browser
+      url: "https://lsong.org/games"
+      icon: "🎮"
 
 - name: "Lsong’s Web"
   links:

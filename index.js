@@ -35,7 +35,7 @@ const createIcon = (link, index) => {
   image.className = 'link-icon';
   image.src = link.icon;
   image.alt = '';
-  image.loading = 'lazy';
+  image.decoding = 'async';
   image.referrerPolicy = 'no-referrer';
   image.hidden = true;
   image.addEventListener('load', () => {

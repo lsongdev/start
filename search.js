@@ -161,7 +161,9 @@ const RelatedQuestions = ({ relatedQuestions }) => {
     h('ul', { className: 'related-questions' }, relatedQuestions?.map((item, index) =>
       h('li', { key: index, className: 'card', id: `Q${index + 1}` },
         h('article', null, [
-          h('h3', { className: 'question' }, item.question),
+          h('h3', { className: 'question' }, item.snippet
+            ? item.question
+            : h('a', { href: `?q=${encodeURIComponent(item.question)}` }, item.question)),
           item.snippet && h('p', { className: 'answer' }, item.snippet),
           item.link && h('footer', { className: 'question-source' }, [
             item.source_logo && h('img', { src: item.source_logo, alt: '', width: 16, height: 16, loading: 'lazy' }),
