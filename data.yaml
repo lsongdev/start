@@ -51,7 +51,7 @@
     - title: Payments
       category: Finance
       description: A simple payment processing service for your business.
-      url: "https://payments.lsong.org"
+      url: "https://pay.lsong.org"
       icon: "💵"
     - title: Forum
       category: Community
