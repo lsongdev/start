@@ -7,69 +7,48 @@
   <title>Lsong’s Start</title>
   <link rel="icon" type="image/png" href="https://lsong.org/assets/web/favicon.ico">
   <link rel="apple-touch-icon" type="image/png" href="https://lsong.org/assets/web/apple-touch-icon.png">
-  <link type="text/css" charset="utf-8" rel="stylesheet" href="app.css">
-  <script type="module" src="shortcuts.js"></script>
+  <link type="text/css" charset="utf-8" rel="stylesheet" href="app.css?v=12">
+  <script type="module" src="shortcuts.js?v=2"></script>
 </head>
 
-<body>
-  
-    <header class="navbar">
-      <a class="heading navbar-brand" href="/">
-        <img src="https://lsong.org/assets/web/icon-512.png" alt="" class="logo">
-        <h1 class="title" prefix="Lsong’s ">Start</h1>
-      </a>
-      <nav>
-        <a href="//lsong.org">home</a>
-        <a href="//lsong.org/posts">blog</a>
-        <a href="//lsong.org/books">books</a>
-        <a href="//lsong.org/music">music</a>
-        <a href="//lsong.org/apps">apps</a>
-        <x-inbox></x-inbox>
-      </nav>
-      <hr />
-    </header>
-    <main class="content">
+<body class="start-page">
+  <a class="skip-link" href="#content">Skip to content</a>
 
-      <section id="hello">
-        <h2>Hello 👋</h2>
-        <p class="headline">
-          Hi, I'm Liu Song, a full-stack developer with a passion for open-source software.
-          I have experience in web and mobile development, as well as a background in embedded systems and network
-          protocols.
-          I enjoy writing tech <a href="//lsong.org/posts">blogs</a> and developing <a
-            href="//go.lsong.org/#apps">applications</a> in my spare time.
-          Proficient in Node.js, Golang, and server operations, I'm always eager to learn more and contribute to the
-          community.
-          Check out my GitHub <a href="https://github.com/lsongdev">@lsongdev</a> for some of my projects and feel free
-          to
-          connect
-          with me to discuss ideas.
-          When I'm not coding, I enjoy listening to <a href="//lsong.org/music">music</a> and playing <a
-            href="//go.lsong.org/#game">games</a>.
-        </p>
-      </section>
+  <header class="site-header navbar">
+    <a href="/" class="navbar-brand" aria-label="Lsong’s Start home">
+      <img class="navbar-brand-mark" src="https://lsong.org/assets/web/icon.png" alt="" aria-hidden="true">
+      <h1 class="title" prefix="Lsong’s ">Start</h1>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="https://lsong.org">Home</a>
+      <a href="https://lsong.org/posts">Writing</a>
+      <a href="https://lsong.org/start">Products</a>
+      <a href="https://my.lsong.org">Account</a>
+    </nav>
+  </header>
 
-      <section id="app">
-        <h2>Redirect</h2>
-        <p>Redirecting ...</p>
-      </section>
-    </main>
+  <main id="content" class="error-page">
+    <section class="site-hero" aria-labelledby="error-title">
+      <p class="eyebrow">404 / Shortcut</p>
+      <div id="app">
+        <h2 class="site-hero-title" id="error-title">Finding your way.</h2>
+        <p class="site-hero-copy">Checking this shortcut before returning you to Start.</p>
+      </div>
+    </section>
+  </main>
 
-    <footer class="footer">
-      <h2>Subscribe</h2>
-      <p>Join our occasional newsletter for product launches, availability, job openings, and news:</p>
-      <form action="https://formspree.io/song940@gmail.com" method="post">
-        <input class="input" type="email" id="email" name="email" required placeholder="email address">
-        <button class="button" type="submit">Submit</button>
-      </form>
-      <hr />
-      Liu Song
-      <address>
-        <a href="mailto:hi@lsong.org">hi@lsong.org</a>
-      </address>
-      <a href="https://lsong.org">https://lsong.org</a>
-    </footer>
-  
+  <footer class="footer flex flex-jc-between flex-center">
+    <a class="navbar-brand" href="/">
+      <img class="navbar-brand-mark" src="https://lsong.org/assets/web/icon.png" alt="" aria-hidden="true">
+      <span>Start</span>
+    </a>
+    <p>A useful part of lsong.org.</p>
+    <nav aria-label="Footer navigation">
+      <a href="mailto:hi@lsong.org">Email</a>
+      <a href="https://github.com/lsongdev">GitHub</a>
+      <a href="https://lsong.org">Home</a>
+    </nav>
+  </footer>
 </body>
 
 </html>
