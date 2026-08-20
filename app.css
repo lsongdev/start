@@ -1,4 +1,4 @@
-@import url("https://lsong.org/css/stylesheet.css?v=5");
+@import url("https://lsong.org/css/stylesheet.css?v=6");
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400..700&display=swap");
 
 .start-page {
@@ -43,10 +43,6 @@
 
 * {
   box-sizing: border-box;
-}
-
-.start-page [hidden] {
-  display: none !important;
 }
 
 html {
@@ -181,12 +177,14 @@ kbd {
   margin: 0;
 }
 
-.bookmark-card {
+.bookmark-card,
+.search-page .search-content :is(.search-results > li, .top-stories > li, .related-questions > li, .related-searches > li) {
   --card-padding: 0;
   --card-border-radius: var(--radius-md);
   --card-shadow: none;
   min-width: 0;
   margin: 0;
+  overflow: hidden;
   transition: border-color var(--duration-fast) var(--ease-standard), background-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
 }
 
@@ -215,17 +213,21 @@ kbd {
   opacity: 1;
 }
 
-.bookmark-card:hover {
-  border-color: var(--color-border-strong);
+.bookmark-card:hover,
+.bookmark-card:focus-within,
+.search-page .search-content :is(.search-results > li, .top-stories > li, .related-questions > li, .related-searches > li):hover,
+.search-page .search-content :is(.search-results > li, .top-stories > li, .related-questions > li, .related-searches > li):focus-within {
+  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
   background: var(--color-surface-subtle);
   transform: translateY(-1px);
 }
 
 .bookmark-link {
   display: grid;
+  position: relative;
   min-height: 82px;
   padding: 18px;
-  grid-template-columns: 38px minmax(0, 1fr) auto;
+  grid-template-columns: 38px minmax(0, 1fr);
   align-items: center;
   gap: 12px;
   color: var(--color-text);
@@ -254,12 +256,6 @@ img.link-icon {
   background: var(--color-surface-subtle);
 }
 
-/* Keep the rounded group intact when its accessible label is visually hidden. */
-.start-page .input-group > :is(.sr-only, input[type="hidden"]) + .input {
-  border-start-start-radius: var(--input-border-radius);
-  border-end-start-radius: var(--input-border-radius);
-}
-
 .link-content {
   min-width: 0;
 }
@@ -283,16 +279,26 @@ img.link-icon {
   font-size: 11px;
 }
 
-.link-arrow {
+.bookmark-card a[href]::after {
+  position: absolute;
+  top: 50%;
+  right: 18px;
   color: var(--color-text-muted);
+  content: "↗";
   font-size: 13px;
   opacity: 0;
+  transform: translate(2px, -50%);
   transition: opacity var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
 }
 
-.bookmark-card:hover .link-arrow {
+.bookmark-card-local a[href]::after {
+  right: 60px;
+}
+
+.bookmark-card:hover a[href]::after,
+.bookmark-card:focus-within a[href]::after {
   opacity: 1;
-  transform: translate(2px, -2px);
+  transform: translate(0, -50%);
 }
 
 .loading-grid {
@@ -402,11 +408,6 @@ img.link-icon {
   padding: 0;
   margin: 0;
   list-style: none;
-}
-
-.search-page .search-content .card {
-  margin: 0;
-  box-shadow: none;
 }
 
 .search-page .overview {
@@ -543,16 +544,7 @@ img.link-icon {
 }
 
 .search-page .search-results > li {
-  overflow: hidden;
-  border-color: var(--color-border);
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
-  transition: border-color var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
-}
-
-.search-page .search-results > li:hover {
-  border-color: color-mix(in srgb, var(--color-primary) 40%, var(--color-border));
-  transform: translateY(-1px);
+  --card-padding: 0;
 }
 
 .search-page .search-result {
@@ -605,6 +597,24 @@ img.link-icon {
   color: var(--color-primary);
 }
 
+.search-page .search-result h3 a[href]::after {
+  display: inline-block;
+  margin-inline-start: 0.35em;
+  color: var(--color-text-muted);
+  content: "↗";
+  font-size: 0.72em;
+  font-weight: 500;
+  opacity: 0;
+  transform: translate(2px, -0.05em);
+  transition: opacity var(--duration-fast) var(--ease-standard), transform var(--duration-fast) var(--ease-standard);
+}
+
+.search-page .search-results > li:hover .search-result h3 a[href]::after,
+.search-page .search-results > li:focus-within .search-result h3 a[href]::after {
+  opacity: 1;
+  transform: translate(0, -0.05em);
+}
+
 .search-page .result-url {
   overflow: hidden;
   margin: 5px 0 0;
@@ -632,12 +642,6 @@ img.link-icon {
   display: grid;
   gap: 12px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.search-page .top-stories > li {
-  overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
 }
 
 .search-page .top-stories > li > article {
@@ -689,11 +693,6 @@ img.link-icon {
 .search-page .related-questions {
   display: grid;
   gap: 12px;
-}
-
-.search-page .related-questions > li {
-  border-radius: var(--radius-lg);
-  background: var(--color-surface);
 }
 
 .search-page .related-questions > li > article {
@@ -787,12 +786,6 @@ img.link-icon {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.search-page .related-searches > li {
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: var(--color-surface);
 }
 
 .search-page .related-searches a {

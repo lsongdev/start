@@ -109,13 +109,6 @@ const createBookmark = (link, index, folderName, isLocal = false) => {
   }
 
   anchor.append(createIcon(link, index), content);
-  if (!isLocal) {
-    const arrow = document.createElement('span');
-    arrow.className = 'link-arrow';
-    arrow.setAttribute('aria-hidden', 'true');
-    arrow.textContent = '↗';
-    anchor.append(arrow);
-  }
   item.append(anchor);
 
   if (isLocal) {
