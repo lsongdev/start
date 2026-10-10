@@ -163,6 +163,10 @@
 
 - name: "Lsong’s Games"
   links:
+    - title: "黑白之间 · Reversi"
+      description: "黑白棋 / 翻转棋，支持人机和本地双人对战"
+      url: "https://lsong.org/reversi/"
+      icon: "https://lsong.org/reversi/icon.svg"
     - title: "NES Emulator"
       url: "https://lsong.org/games"
       icon: "🎮"
